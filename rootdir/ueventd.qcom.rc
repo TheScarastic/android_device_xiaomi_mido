@@ -250,3 +250,6 @@
 
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
+
+# For lirc
+/dev/lirc0          0660   system     system
