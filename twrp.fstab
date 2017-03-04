@@ -17,38 +17,21 @@
 /sdcard1        auto      /dev/block/mmcblk1p1                               flags=display="MicroSD";storage;wipeingui;removable
 /usb-otg        auto      /dev/block/sda1                                    flags=display="USB Storage";storage;wipeingui;removable
 
-# Extra partitions
+# Bootloader
+/aboot		emmc	  /dev/block/bootdevice/by-name/aboot	             flags=backup=1;display="Bootloader"
+/cmnlib		emmc	  /dev/block/bootdevice/by-name/cmnlib	             flags=backup=1;subpartitionof=/aboot
+/hyp		emmc	  /dev/block/bootdevice/by-name/hyp	             flags=backup=1;subpartitionof=/aboot
+/tz		emmc	  /dev/block/bootdevice/by-name/tz	             flags=backup=1;subpartitionof=/aboot
+/rpm		emmc	  /dev/block/bootdevice/by-name/rpm	             flags=backup=1;subpartitionof=/aboot
+/keymaster	emmc	  /dev/block/bootdevice/by-name/keymaster	     flags=backup=1;subpartitionof=/aboot
+/devcfg		emmc	  /dev/block/bootdevice/by-name/devcfg	             flags=backup=1;subpartitionof=/aboot
 
-/DDR               emmc          /dev/block/bootdevice/by-name/DDR      flags=display="DDR";backup=1
-/aboot             emmc          /dev/block/bootdevice/by-name/aboot      flags=display="Aboot";backup=1
-/abootbak          emmc          /dev/block/bootdevice/by-name/abootbak     flags=display="Abootbak";backup=1
-/apdp              emmc          /dev/block/bootdevice/by-name/apdp     flags=display="Apdp";backup=1
-/cmnlib            emmc          /dev/block/bootdevice/by-name/cmnlib     flags=display="Cmnlib";backup=1
-/cmnlibbak         emmc          /dev/block/bootdevice/by-name/cmnlibbak     flags=display="Cmnlibbak";backup=1
-/devcfg            emmc          /dev/block/bootdevice/by-name/devcfg     flags=display="Devcfg";backup=1
-/devinfo           emmc          /dev/block/bootdevice/by-name/devinfo     flags=display="Devinfo";backup=1
-/dip               emmc          /dev/block/bootdevice/by-name/dip      flags=display="Dip";backup=1
-/dpo               emmc          /dev/block/bootdevice/by-name/dpo     flags=display="Dpo";backup=1
-/fsc               emmc          /dev/block/bootdevice/by-name/fsc     flags=display="Fsc";backup=1
-/fsg               emmc          /dev/block/bootdevice/by-name/fsg     flags=display="Fsg";backup=1
-/hyp               emmc          /dev/block/bootdevice/by-name/hyp     flags=display="Hyp";backup=1
-/hypbak            emmc          /dev/block/bootdevice/by-name/hypbak     flags=display="Hypbak";backup=1
-/keymaster         emmc          /dev/block/bootdevice/by-name/keymaster     flags=display="Keymaster";backup=1
-/keymasterbak      emmc          /dev/block/bootdevice/by-name/keymasterbak     flags=display="Keymasterbak";backup=1
-/keystore          emmc          /dev/block/bootdevice/by-name/keystore     flags=display="Keystore";backup=1
-/limits            emmc          /dev/block/bootdevice/by-name/limits     flags=display="Limits";backup=1
-/mcfg              emmc          /dev/block/bootdevice/by-name/mcfg     flags=display="Mcfg";backup=1
-/mdtp              emmc          /dev/block/bootdevice/by-name/mdtp     flags=display="Mdtp";backup=1
-/mota              emmc          /dev/block/bootdevice/by-name/mota    flags=display="Mota";backup=1
-/msadp             emmc          /dev/block/bootdevice/by-name/msadp    flags=display="Msadp";backup=1
-/oem               emmc          /dev/block/bootdevice/by-name/oem     flags=display="Oem";backup=1
-/rpm               emmc          /dev/block/bootdevice/by-name/rpm      flags=display="Rpm";backup=1
-/rpmbak            emmc          /dev/block/bootdevice/by-name/rpmbak     flags=display="Rpmbak";backup=1
-/sbl1              emmc          /dev/block/bootdevice/by-name/sbl1     flags=display="Sbl1";backup=1
-/sbl1bak           emmc          /dev/block/bootdevice/by-name/sbl1bak     flags=display="Sbl1bak";backup=1
-/sec               emmc          /dev/block/bootdevice/by-name/sec      flags=display="Sec";backup=1
-/splash            emmc          /dev/block/bootdevice/by-name/splash      flags=display="Splash";backup=1
-/ssd               emmc          /dev/block/bootdevice/by-name/ssd     flags=display="Ssd";backup=1
-/syscfg            emmc          /dev/block/bootdevice/by-name/syscfg     flags=display="Syscfg";backup=1
-/tz                emmc          /dev/block/bootdevice/by-name/tz      flags=display="Tz";backup=1
-/tzbak             emmc          /dev/block/bootdevice/by-name/tzbak     flags=display="Tzbak";backup=1
+# Modem backup/restore
+/modem		emmc	  /dev/block/bootdevice/by-name/modem	             flags=backup=1;display="Modem"
+/dsp		emmc	  /dev/block/bootdevice/by-name/dsp	             flags=backup=1;subpartitionof=/modem
+
+# EFS backup/restore
+/efs1		emmc	  /dev/block/bootdevice/by-name/modemst1	     flags=backup=1;display="EFS"
+/efs2		emmc	  /dev/block/bootdevice/by-name/modemst2	     flags=backup=1;subpartitionof=/efs1
+/efsg		emmc	  /dev/block/bootdevice/by-name/fsg	             flags=backup=1;subpartitionof=/efs1
+/efsc		emmc	  /dev/block/bootdevice/by-name/fsc	             flags=backup=1;subpartitionof=/efs1
