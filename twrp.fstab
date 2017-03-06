@@ -2,7 +2,7 @@
 
 /boot             emmc        /dev/block/bootdevice/by-name/boot                 defaults
 /recovery         emmc        /dev/block/bootdevice/by-name/recovery             flags=backup=1
-/system           ext4        /dev/block/bootdevice/by-name/system               defaults
+/system           auto        /dev/block/bootdevice/by-name/system               defaults
 /system_image     emmc        /dev/block/bootdevice/by-name/system               defaults
 /data             auto        /dev/block/bootdevice/by-name/userdata             flags=encryptable=footer;length=-16384;
 /cache            auto        /dev/block/bootdevice/by-name/cache                defaults
