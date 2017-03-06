@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_kernel_xiaomi_msm8953",
+    "target_path": "kernel/xiaomi/msm8953"
+  }
+]
