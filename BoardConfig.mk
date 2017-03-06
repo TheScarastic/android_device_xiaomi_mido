@@ -222,6 +222,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 #TWRP
 RECOVERY_VARIANT := twrp
+TW_MTP_DEVICE := "Redmi Note 4"
 TW_THEME := portrait_hdpi
 TW_NEW_ION_HEAP := true
 TW_TARGET_USES_QCOM_BSP := true
@@ -235,6 +236,7 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TW_EXCLUDE_SUPERSU := true
 TWRP_INCLUDE_LOGCAT := false
 TWRP_EVENT_LOGGING := false
+TWHAVE_SELINUX := true
 PRODUCT_COPY_FILES += bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 PRODUCT_COPY_FILES += device/xiaomi/mido/twrp.fstab:recovery/root/etc/twrp.fstab
 
