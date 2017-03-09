@@ -11,7 +11,7 @@
 /misc           emmc      /dev/block/bootdevice/by-name/misc                 flags=display="Misc"
 /efs1           emmc      /dev/block/bootdevice/by-name/modemst1             flags=display="EFS";backup=1
 /efs2           emmc      /dev/block/bootdevice/by-name/modemst2             flags=backup=1;subpartitionof=/efs1
-/firmware       vfat      /dev/block/bootdevice/by-name/modem                flags=display="Firmware";mounttodecrypt
+/firmware       vfat      /dev/block/bootdevice/by-name/modem                flags=display="Firmware";backup=1;mounttodecrypt
 /persist        ext4      /dev/block/bootdevice/by-name/persist              flags=display="Persist";backup=1
 
 /sdcard1        auto      /dev/block/mmcblk1p1                               flags=display="MicroSD";storage;wipeingui;removable
@@ -27,8 +27,7 @@
 /devcfg		emmc	  /dev/block/bootdevice/by-name/devcfg	             flags=backup=1;subpartitionof=/aboot
 
 # Modem backup/restore
-/modem		emmc	  /dev/block/bootdevice/by-name/modem	             flags=backup=1;display="Modem"
-/dsp		emmc	  /dev/block/bootdevice/by-name/dsp	             flags=backup=1;subpartitionof=/modem
+/dsp		emmc	  /dev/block/bootdevice/by-name/dsp	             flags=backup=1;subpartitionof=/firmware
 
 # EFS backup/restore
 /efs1		emmc	  /dev/block/bootdevice/by-name/modemst1	     flags=backup=1;display="EFS"
