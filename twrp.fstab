@@ -20,7 +20,6 @@
 # Bootloader
 /aboot		emmc	  /dev/block/bootdevice/by-name/aboot	             flags=backup=1;display="Bootloader"
 /cmnlib		emmc	  /dev/block/bootdevice/by-name/cmnlib	             flags=backup=1;subpartitionof=/aboot
-/hyp		emmc	  /dev/block/bootdevice/by-name/hyp	             flags=backup=1;subpartitionof=/aboot
 /tz		emmc	  /dev/block/bootdevice/by-name/tz	             flags=backup=1;subpartitionof=/aboot
 /rpm		emmc	  /dev/block/bootdevice/by-name/rpm	             flags=backup=1;subpartitionof=/aboot
 /keymaster	emmc	  /dev/block/bootdevice/by-name/keymaster	     flags=backup=1;subpartitionof=/aboot
