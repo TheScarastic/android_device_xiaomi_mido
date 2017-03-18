@@ -91,4 +91,8 @@ ALL_DEFAULT_INSTALLED_MODULES += $(FPC_SYMLINKS)
 
 include device/xiaomi/mido/tftp.mk
 
+# Copy Keylayout Overrides
+$(shell mkdir -p $(TARGET_OUT_KEYLAYOUT); \
+    cp -pf device/xiaomi/mido/keylayout/Generic.kl $(TARGET_OUT_KEYLAYOUT))
+
 endif
