@@ -171,9 +171,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gf3208.kl:system/usr/keylayout/gf3208.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
-	
-PRODUCT_COPY_FILES_OVERRIDES += \
-    system/usr/keylayout/Generic.kl
 
 # IPA Manager
 PRODUCT_PACKAGES += \
