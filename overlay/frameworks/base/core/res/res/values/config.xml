@@ -106,7 +106,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">71</integer>
+    <integer name="config_deviceHardwareKeys">83</integer>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -134,7 +134,7 @@
     -->
     <integer name="config_longPressOnHomeBehavior">2</integer>
 
-    <!-- Control the behavior when the user long presses the menu button.
+    <!-- Control the behavior when the user long presses the app switch button.
             0 - Nothing
             1 - Menu key
             2 - Recent apps view in SystemUI
@@ -142,9 +142,9 @@
             4 - Voice Search
             5 - In-app Search
          This needs to match the constants in
-         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
+         services/core/java/com/android/server/policy/PhoneWindowManager.java
     -->
-    <integer name="config_longPressOnMenuBehavior">3</integer>
+    <integer name="config_longPressOnAppSwitchBehavior">1</integer>
 
     <!-- Wifi driver supports batched scan -->
     <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
