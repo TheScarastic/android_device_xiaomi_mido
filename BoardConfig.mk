@@ -37,16 +37,27 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_CONFIG := lineageos_mido_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_APPEND_DTB := true
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -140,8 +151,13 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
 # Filesystem
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_SYSTEMIMAGES_USE_EXT4 := true
+TARGET_SYSTEMIMAGES_USE_F2FS := true
 
 #FM
 BOARD_HAVE_QCOM_FM := true
@@ -214,6 +230,26 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+#TWRP
+RECOVERY_VARIANT := twrp
+TW_MTP_DEVICE := "Redmi Note 4"
+TW_THEME := portrait_hdpi
+TW_NEW_ION_HEAP := true
+TW_TARGET_USES_QCOM_BSP := true
+TW_NO_USB_STORAGE := true
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_NEW_ION_HEAP := true
+TW_TARGET_USES_QCOM_BSP := true
+TW_INCLUDE_CRYPTO := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+TW_EXCLUDE_SUPERSU := true
+TWRP_INCLUDE_LOGCAT := false
+TWRP_EVENT_LOGGING := false
+TWHAVE_SELINUX := true
+PRODUCT_COPY_FILES += bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+PRODUCT_COPY_FILES += device/xiaomi/mido/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/mido/BoardConfigVendor.mk
