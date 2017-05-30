@@ -244,7 +244,12 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libcnefeatureconfig \
     libxml2
-
+    
+# Include explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full \
+    librsjni
+    
 # Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
