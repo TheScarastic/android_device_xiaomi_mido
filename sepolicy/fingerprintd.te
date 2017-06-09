@@ -1,0 +1,4 @@
+allow fingerprintd gx_fpd:binder { transfer call };
+allow fingerprintd gx_fpd_service:service_manager { find };
+allow fingerprintd fingerprint_service:service_manager { find };
+set_prop(fingerprintd, system_prop)
