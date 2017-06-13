@@ -1,0 +1,20 @@
+[
+  {
+    "branch": "cm-14.1",
+    "repository": "LordArcadius/android_kernel_xiaomi_msm8953",
+    "target_path": "kernel/xiaomi/msm8953",
+    "remote": "github"
+  },
+  {
+    "branch": "bliss-n",
+    "repository": "LordArcadius/android_device_xiaomi_mido",
+    "target_path": "device/xiaomi/mido",
+    "remote": "github"
+  },
+  {
+    "branch": "cm-14.1",
+    "repository": "LordArcadius/proprietary_vendor_xiaomi",
+    "target_path": "vendor/xiaomi",
+    "remote": "github"
+  }
+]
