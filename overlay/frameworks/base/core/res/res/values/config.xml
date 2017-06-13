@@ -383,7 +383,7 @@
  <!-- <bool name="config_uiBlurEnabled">true</bool>-->
 
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
-    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
+  <!-- <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>-->
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
