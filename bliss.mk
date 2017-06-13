@@ -17,7 +17,7 @@
 $(call inherit-product, device/xiaomi/mido/full_mido.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/cm/config/common.mk)
+$(call inherit-product, vendor/bliss/config/common.mk)
 
 PRODUCT_NAME := bliss_mido
 BOARD_VENDOR := Xiaomi
