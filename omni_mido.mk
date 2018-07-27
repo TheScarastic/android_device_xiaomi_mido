@@ -27,11 +27,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Charger
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     charger_res_images
 
 # Time Zone data for recovery
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 ## Device identifier. This must come after all inclusions
