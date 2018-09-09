@@ -20,4 +20,4 @@
 
 ## Device Picture
 
-![Redmi Note 4](http://i01.appmifile.com/webfile/globalimg/7/537557F3-A4F1-2490-E9D3-138B2A11DBF6.png "Redmi Note 4")
+![Mi MAX 2](http://i01.appmifile.com/webfile/globalimg/29/B8388A52-854A-94A5-D386-7F675F467FE1.jpg "Xiaomi Mi MAX 2")
