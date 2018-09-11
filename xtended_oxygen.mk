@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oxygen device
 $(call inherit-product, device/xiaomi/oxygen/full_oxygen.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common gzosp stuff.
+$(call inherit-product, vendor/config/xtended/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
-PRODUCT_NAME := lineage_oxygen
+PRODUCT_NAME := xtended_oxygen
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Xiaomi Mi Max 2
 PRODUCT_MANUFACTURER := Xiaomi
