@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.ir@1.0-service.xiaomi_mido",
+    name: "android.hardware.ir@1.0-service.xiaomi_oxygen",
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.ir@1.0-service.xiaomi_mido.rc"],
+    init_rc: ["android.hardware.ir@1.0-service.xiaomi_oxygen.rc"],
     srcs: ["service.cpp", "ConsumerIr.cpp"],
     shared_libs: [
         "libbase",
